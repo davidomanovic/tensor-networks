@@ -95,7 +95,7 @@ function main()
     end
 
     # Save outputs for Qiskit step
-    out_npz = "data/tn_no_from_dmrg.npz"
+    out_npz = "data/dmrg_h6_no.npz"
     npzwrite(out_npz, Dict("gamma" => gamma, "no_occ" => no_occ, "U_no" => U_no, "E_dmrg" => E))
     @info "Wrote TN outputs to $out_npz"
 
