@@ -20,7 +20,6 @@ function main()
     sites = ITensorMPS.siteinds("Electron", norb; conserve_qns=true)
 
     # Build ab initio Hamiltonian
-    # Using OpSum (modern API). Add terms separately per spin channel.
     @info "Building Hamiltonian OpSum..."
     os = OpSum()
 
@@ -80,8 +79,6 @@ function main()
 
     # Ensure Hermitian
     gamma = (gamma + gamma') / 2
-
-    # Natural orbitals: eigen-decomposition of gamma
     vals, vecs = eigen(gamma) 
 
     # Sort by occupation descending
@@ -94,13 +91,11 @@ function main()
         @info @sprintf("  NO %2d: occ = %.8f", i, no_occ[i])
     end
 
-    # Save outputs for Qiskit step
     out_npz = "data/dmrg_h6_no.npz"
     npzwrite(out_npz, Dict("gamma" => gamma, "no_occ" => no_occ, "U_no" => U_no, "E_dmrg" => E))
     @info "Wrote TN outputs to $out_npz"
 
-    # quick sanity checks
-    N_e = sum(no_occ)           # should be close to total electrons
+    N_e = sum(no_occ)     
     @info @sprintf("Tr(gamma) ~ total electrons = %.8f", N_e)
 end
 
