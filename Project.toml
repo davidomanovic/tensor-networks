@@ -1,4 +1,0 @@
-[deps]
-ITensorMPS = "0d1a4710-d33b-49a5-8f18-73bdf49b47e2"
-ITensors = "9136182c-28ba-11e9-034c-db9fb085ebd5"
-NPZ = "15e1cf62-19b3-5cfa-8e77-841668bca605"

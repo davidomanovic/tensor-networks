@@ -1,0 +1,6 @@
+[submodule "libs/TensorNetworkQuantumSimulator"]
+	path = libs/TensorNetworkQuantumSimulator
+	url = https://github.com/JoeyT1994/TensorNetworkQuantumSimulator.git
+[submodule "libs/dmrgpy"]
+	path = libs/dmrgpy
+	url = https://github.com/joselado/dmrgpy.git

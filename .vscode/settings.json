@@ -1,3 +1,8 @@
 {
-    "CodeGPT.apiKey": "Anthropic"
+    "CodeGPT.apiKey": "Anthropic",
+    "git.ignoreLimitWarning": true,
+    "[julia]": {
+        "editor.tabCompletion": "on"
+    },
+    "editor.tabCompletion": "on"
 }
